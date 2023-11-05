@@ -1,0 +1,46 @@
+lari_adidas1
+Sepatu Running Adidas Galaxy 6 W IE1989 - Dshgry/Arcfus/Lucpnk
+725
+
+lari_adidas2
+Sepatu Running Adidas Duramo 10 GW4075 - Core Black/Pulse Blue/Impact Orange
+765
+
+lari_adidas3
+Sepatu Running Adidas Runfalcon 2.0 GV9559 - Carbon/Cloud White/Core Black
+725
+
+
+lari_mizuno1
+Sepatu Running Mizuno Wave Rider 26 SSW J1GC227551 - Maui Blue/Nimbus Cloud/Fiery Coral
+1359
+
+lari_mizuno2
+Sepatu Running Mizuno Wave Rider 26 J1GC220351 - Provincial Blue/Nimbus Cloud/Solei
+1359
+
+lari_mizuno3
+Sepatu Running Mizuno Wave Rider 26 SE J1GC220405 - Super Sonic/Ice Water/Cherry Tomato
+1359
+
+
+lari_nike1
+Sepatu Running Nike Revolution 6 NN 4E FJ1049 100 - White/Fuchsia Dream-Black
+679
+
+lari_nike2
+Sepatu Running Nike Revolution 6 NN 4E DD8475 404 - Racer Blue/White-High Voltage
+679
+
+
+lari_ortu1
+Sepatu Running Ortuseight Hyperglide 2.0 - Air Force Blue/Ortrange
+509
+
+lari_ortu2
+Sepatu Running Ortuseight Hypersonic 1.2 - Peach/Cyan
+849
+
+lari_ortu3
+Sepatu Running Ortuseight Hyperdrive 2.0 - Maroon/Ortrange/White
+509

@@ -1,0 +1,38 @@
+bola_adidas1
+Sepatu Bola Adidas Copa Pure.3 FG HQ8984 - Ftwwht/Cblack/Luclem
+935
+
+bola_adidas2
+Sepatu Bola Adidas X Crazyfast Messi.3 FG IE4078 - Silvmt/Bliblu/Cblack
+1189
+
+bola_adidas3
+Sepatu Bola Adidas Copa Pure.4 FG GY9082 - Owhite/Sorang/Owhite
+679
+
+bola_adidas4
+Sepatu Bola Adidas X Speedportal.3 FG GZ5076 - Teshpk/Ftwwht/Cblack
+1019
+
+
+bola_mizuno1
+Sepatu Bola Mizuno Morelia Neo IV Japan P1GA233064 - Fiery Coral 2/Bolt 2
+3599
+
+bola_mizuno2
+Sepatu Bola Mizuno Morelia Neo III B Elite P1GA229103 - Black/Galaxy Silver/Black
+1999
+
+
+
+bola_nike1
+Sepatu Bola Nike Zoom Vapor 15 Academy KM FG DV0707 400 - Baltic Blue/White
+1175
+
+bola_nike2
+Sepatu Bola Nike Legend 10 Academy FG DV4337 300 - Hyper Turq/Black-Fuchsia Dream
+1019
+
+bola_nike3
+Sepatu Bola Nike Vapor 15 Club FG/MG DJ5963 600 - Bright Crimson/White/Black
+679

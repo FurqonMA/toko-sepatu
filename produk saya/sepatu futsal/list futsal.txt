@@ -1,0 +1,58 @@
+futsal_ortu1
+Sepatu Futsal Ortuseight Catalyst Griffin IN - Magenta/Purple/Cyan
+339
+
+futsal_ortu2
+Sepatu Futsal Ortuseight Jogosala Victus - Vermillion Red/Gold
+449
+
+futsal_ortu3
+Sepatu Futsal Ortuseight Forte Xcalibur IN - Magenta/Cyan/Black
+425
+
+futsal_ortu4
+Sepatu Futsal Ortuseight Jogosala Victus - Black/Electricity
+449
+
+futsal_ortu5
+Sepatu Futsal Ortuseight Volt V2 IN - Cargo Green/Mustard
+279
+
+futsal_ortu6
+Sepatu Futsal Ortuseight Forte Claws IN - Turquoise/Ortrange
+509
+
+futsal_ortu7
+Sepatu Futsal Ortuseight Forte Aegon IN SE - White/Ortred
+719
+
+futsal_ortu8
+Sepatu Futsal Ortuseight Catalyst Vision V3 IN K-Lea - Ortred/Ortrange/White
+595
+
+
+
+futsal_adidas1
+Sepatu Futsal Adidas Top Sala Competition IE1547 - Shanav/Royblu/Ftwwht
+935
+
+futsal_adidas2
+Sepatu Futsal Adidas Predator Accuracy.3 IN GY9990 - Ftwwht/Cblack/Luclem
+1189
+
+futsal_adidas3
+Sepatu Futsal Adidas X Speedportal.4 IN GZ2452 - Sogold/Cblack/Tmsoor
+765
+
+futsal_adidas4
+Sepatu Futsal Adidas Speedportal.3 IN GZ5068 - Teshpk/Zeromt/Cblack
+1109
+
+
+futsal_nike1
+Sepatu Futsal Nike Vapor 15 Club IC DJ5969 040 - Black/Chrome/Hyper Royal
+679
+
+futsal_nike2
+Sepatu Futsal Nike Legend 9 Academy IC DA1190 705 - Barely Volt/Volt-Summit White
+849

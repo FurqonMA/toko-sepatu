@@ -55,7 +55,7 @@ class Halaman_utama extends CI_Controller
 		$this->cart->update($data);
 		redirect('halaman_utama/detail_keranjang');
 	}
-
+	
 	public function pembayaran()
 	{
 		$data['title'] = 'AthleticXpress | Pembayaran';
@@ -63,21 +63,41 @@ class Halaman_utama extends CI_Controller
 		$this->load->view('frontend/layout/navbar');
 		$this->load->view('frontend/pembayaran');
 	}
-
+	
 	public function proses_pesanan()
-	{
-		$is_processed = $this->model_invoice->index();
-		if ($is_processed) {
-			$this->cart->destroy();
-			$data['title'] = 'AthleticXpress | Proses pesanan';
-			$this->load->view('frontend/layout/head', $data);
-			$this->load->view('frontend/layout/navbar');
-			$this->load->view('frontend/proses_pesanan');
-			$this->load->view('frontend/layout/footer');
-		} else {
-			echo "Maaf Pesanan Anda gagal di proses";
-		}
-	}
+{
+    $is_processed = false;
+    $message = "";
+	$berhasil = "";
+
+    $nama = $this->input->post('nama');
+    $alamat = $this->input->post('alamat');
+    $no_telp = $this->input->post('no_telp');
+    $jasa_pengiriman = $this->input->post('jasa_pengiriman');
+    $bank = $this->input->post('bank');
+
+    if (!empty($nama) && !empty($alamat) && !empty($no_telp) && !empty($jasa_pengiriman) && !empty($bank)) {
+        $is_processed = $this->model_invoice->index();
+        if ($is_processed) {
+            $berhasil = "Selamat, pesanan Anda telah berhasil diproses. Untuk info lebih lanjut silahkan hubungi penjual pada nomor yang tertera pada customer service.";
+        } else {
+            $message = "Maaf, terjadi kesalahan saat memproses pesanan.";
+        }
+    } else {
+        $message = "Maaf, formulir belum lengkap. Silakan isi semua form dengan benar sebelum melanjutkan.";
+    }
+
+    $data['message'] = $message;
+	$data['berhasil'] = $berhasil;
+	$data['is_processed'] = $is_processed;
+    $data['title'] = 'AthleticXpress | Proses pesanan';
+	$this->cart->destroy();
+    $this->load->view('frontend/layout/head', $data);
+    $this->load->view('frontend/layout/navbar');
+    $this->load->view('frontend/proses_pesanan', $data);
+    $this->load->view('frontend/layout/footer');
+}
+
 
 	public function detail($id_barang)
 	{
@@ -86,6 +106,16 @@ class Halaman_utama extends CI_Controller
 		$this->load->view('frontend/layout/head', $data);
 		$this->load->view('frontend/layout/navbar');
 		$this->load->view('frontend/detail_barang', $data);
+		$this->load->view('frontend/layout/footer');
+	}
+
+	public function search() {
+		$keyword = $this->input->post('keyword');
+		$data['title'] = 'AthleticXpress | Cari Produk';
+		$data['barang'] = $this->model_barang->get_keyword($keyword);
+		$this->load->view('frontend/layout/head', $data);
+		$this->load->view('frontend/layout/navbar');
+		$this->load->view('frontend/halaman_utama/halaman_utama', $data);
 		$this->load->view('frontend/layout/footer');
 	}
 }

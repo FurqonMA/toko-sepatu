@@ -62,7 +62,7 @@
     <div class="container container-produk mb-4">        
         
         <div class="row">
-            <?php foreach ($barang as $brg) : ?>
+            <?php foreach ($futbal as $brg) : ?>
             <div class="col-lg-4 mb-4 col-md-6">
                 <div class="card-produk" style="width: 24rem; height: auto; border-radius: 20px;">
                         <img src="<?= base_url().'/uploads/'.$brg->gambar ?>" class="card-img-top" alt="...">

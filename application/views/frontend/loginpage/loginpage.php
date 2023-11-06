@@ -1,18 +1,18 @@
 <section class="loginpage" style="  background: url('../assets/img/background.jpg') no-repeat; background-size: cover; background-position: center;">
     <div class="wrapper">
-        <form action="">
+        <form action="<?php echo base_url('auth/login') ?>" method="POST">
             <h1>LOGIN</h1>
+            <?php echo $this->session->flashdata('error') ?>
+            <?php echo $this->session->flashdata('pesan') ?>  
             <div class="input-boxx">
-                <input type="text" name="" id="" placeholder="Username" required>
+                <input type="text" name="username" id="" placeholder="Username">                
+                <?php echo form_error('username','<div class=" text-sm ml-2" style="color: red;">','</div>')?>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-boxx">
-                <input type="password" name="" id="" placeholder="Password" required>
+                <input type="password" name="password" id="" placeholder="Password">
+                <?php echo form_error('password','<div class="text-sm ml-2" style="color: red;">','</div>')?>
                 <i class='bx bxs-lock'></i>
-            </div>
-    
-            <div class="remember-forgot">
-                <label for=""><input type="checkbox">Remember me</label>
             </div>
     
             <button class="btn" type="submit">Login</button>

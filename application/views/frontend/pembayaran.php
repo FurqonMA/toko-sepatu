@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group mt-3">
                         <label>Jasa Pengiriman</label>
-                        <select class="form-control">
+                        <select class="form-control" name="jasa_pengiriman">
                             <option>JNE</option>
                             <option>JNT</option>
                             <option>POS Indonesia</option>
@@ -40,7 +40,7 @@
 
                     <div class="form-group mt-3">
                         <label>Pilih BANK</label>
-                        <select class="form-control">
+                        <select class="form-control" name="bank">
                             <option>BCA - XXXXXXX</option>
                             <option>BNI - XXXXXXX</option>
                             <option>BRI - XXXXXXX</option>

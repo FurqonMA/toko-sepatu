@@ -17,7 +17,7 @@ class Model_auth extends CI_Model {
         }
     }
 
-    public function is_logged_in(){
-        return $this->session->userdata('username') !== null;
-    }
+    // public function is_logged_in(){
+    //     return $this->session->userdata('username') !== null;
+    // }
 }

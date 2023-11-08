@@ -73,7 +73,7 @@
                                 <span class="badge text-bg-success">Rp. <?= number_format($brg->harga, 0,',','.')?></span>
                             </div>
                             <?= anchor('halaman_utama/tambah_keranjang/' .$brg->id_barang, '<div class="btn btn-primary">Add To Cart</div>') ?>
-                            <?= anchor('halaman_utama/detail/' .$brg->id_barang, '<div class="btn btn-danger">Detail</div>') ?>
+                            <?= anchor('welcome/detail/' .$brg->id_barang, '<div class="btn btn-danger">Detail</div>') ?>
                         </div>
                   </div>
             </div>

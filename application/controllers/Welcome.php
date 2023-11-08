@@ -18,8 +18,24 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
+	
+	 public function index()
+	 {
+		 $data['title'] = 'AthleticXpress';
+		 $data['barang'] = $this->model_barang->tampil_data()->result();
+		 $this->load->view('frontend/layout/head', $data);
+		 $this->load->view('frontend/layout/navbar');
+		 $this->load->view('frontend/halaman_utama/halaman_utama', $data);
+		 $this->load->view('frontend/layout/footer');
+	 }
+	 
+	 public function detail($id_barang)
+	 {
+		 $data['barang'] = $this->model_barang->detail_barang($id_barang);
+		 $data['title'] = 'AthleticXpress | Detail Produk';
+		 $this->load->view('frontend/layout/head', $data);
+		 $this->load->view('frontend/layout/navbar');
+		 $this->load->view('frontend/detail_barang', $data);
+		 $this->load->view('frontend/layout/footer');
+	 } 
 }

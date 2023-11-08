@@ -2,6 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_barang extends CI_Controller {
+    public function __construct()
+    {
+        parent::__construct();
+        if ($this->session->userdata('role_id') !='1') {
+            $this->session->set_flashdata('error', '<div class="alert alert-danger" role="alert">
+            Harap Login Terlebih Dahulu!
+          </div>');
+            redirect('Auth/login');
+        }
+    }
     public function index() {
         $data['barang'] = $this->model_barang->tampil_data()->result();
         $this->load->view('template_admin/header');

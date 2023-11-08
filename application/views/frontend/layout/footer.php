@@ -14,16 +14,16 @@
       <div class="row mt-5">
         <div class="col-lg-4 col-md-6 col-sm-12 mt-5 servis">
           <h4 class="title-footer">Product</h4>
-          <a href="#"><h5>Sepatu Sepak Bola</h5></a>
-          <a href="#"><h5>Sepatu Futsal</h5></a>
-          <a href="#"><h5>Sepatu Basket</h5></a>
-          <a href="#"><h5>Sepatu Lari</h5></a>
+          <a href="<?php echo base_url() ?>Olahraga/sepak_bola"><h5>Sepatu Sepak Bola</h5></a>
+          <a href="<?php echo base_url() ?>Olahraga/futsal"><h5>Sepatu Futsal</h5></a>
+          <a href="<?php echo base_url() ?>Olahraga/basket"><h5>Sepatu Basket</h5></a>
+          <a href="<?php echo base_url() ?>Olahraga/lari"><h5>Sepatu Lari</h5></a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 mt-5 contact">
           <h4 class="title-footer">Customer Service</h4>
           <a href="#"><i class='bx bxs-phone'></i> <h5> :&nbsp;&nbsp;08123456789</h5></a>
           <a href="#"><i class='bx bxl-telegram'></i> <h5> :&nbsp;&nbsp;AthleticXpress</h5></a>
-          <a href="#"><i class='bx bxs-map'></i> <h5> :&nbsp; JL. Raya Kelet, Keling, Jepara</h5></a>
+          <a href="https://www.google.com/maps/place/FOTO+COPY+%26+ALAT+TULIS+OMEGA/@-6.4968002,110.9026854,3a,75y,178.44h,93.34t/data=!3m7!1e1!3m5!1snWVLr2pSTSkaIzA2NJ4Cog!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DnWVLr2pSTSkaIzA2NJ4Cog%26cb_client%3Dsearch.revgeo_and_fetch.gps%26w%3D96%26h%3D64%26yaw%3D215.45996%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m16!1m9!3m8!1s0x2e7125624170552b:0x5027a76e3561600!2sKelet,+Kec.+Keling,+Kabupaten+Jepara,+Jawa+Tengah!3b1!8m2!3d-6.4969203!4d110.9059574!10e5!16s%2Fg%2F120vt34z!3m5!1s0x2e7125627e8f2321:0x9cb5bab6349d29f1!8m2!3d-6.4968809!4d110.9026601!16s%2Fg%2F11v5yxk0f_?entry=ttu" target="_blank"><i class='bx bxs-map'></i> <h5> :&nbsp; JL. Raya Kelet, Keling, Jepara</h5></a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 mt-5">
           <h4 class="title-footer">About Us</h4>

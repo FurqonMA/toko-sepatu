@@ -4,6 +4,7 @@
             <h1>LOGIN</h1>
             <?php echo $this->session->flashdata('error') ?>
             <?php echo $this->session->flashdata('pesan') ?>  
+            <?php echo $this->session->flashdata('daftar') ?>  
             <div class="input-boxx">
                 <input type="text" name="username" id="" placeholder="Username">                
                 <?php echo form_error('username','<div class=" text-sm ml-2" style="color: red;">','</div>')?>
@@ -18,7 +19,7 @@
             <button class="btn" type="submit">Login</button>
     
             <div class="register-link">
-                <p>Belum mempunyai akun? <a href="<?=base_url();?>register_page/index">Register</a></p>
+                <p>Belum mempunyai akun? <a href="<?=base_url();?>register_page/index">Daftar</a></p>
             </div>
             <div class="back">
                 <a href="<?=base_url();?>halaman_utama/index">Back to Home</a>

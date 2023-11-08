@@ -3,7 +3,7 @@
   <div class="navbar">
     <i class='bx bx-menu'></i>
     <div class="logo">
-    <a href="<?=base_url();?>halaman_utama/index"> <img src="<?=base_url();?>/assets/img/logotoko.png" alt="AthleticXpress logo"></a>
+    <a href="<?=base_url();?>welcome/index"> <img src="<?=base_url();?>/assets/img/logotoko.png" alt="AthleticXpress logo"></a>
     </div>
     <div class="nav-links">
       <div class="sidebar-logo">
@@ -12,7 +12,7 @@
       </div>
       <ul class="links">
          <li>
-          <a href="<?=base_url();?>halaman_utama/index">Home</a>
+          <a href="<?=base_url();?>welcome/index">Home</a>
           <div class="bunder"></div>
         </li>
          <li>

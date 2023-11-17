@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AthleticXpress Admin - Dashboard</title>
+    <title><?= $judul; ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url()?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,5 +19,18 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url()?>assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+    .form-group {
+        position: relative;
+    }
+
+    select {
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+
 
 </head>

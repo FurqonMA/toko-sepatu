@@ -31,9 +31,9 @@
                     <span>Data Barang</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('admin/invoice')?>">
-                    <i class="fas fa-fw fa-file-invoice"></i>
-                    <span>Invoices</span></a>
+                <a class="nav-link" href="<?= base_url('admin/dashboard_admin/setting')?>">
+                    <i class="fas fa-fw fa-cogs"></i>
+                    <span>Setting</span></a>
             </li>
 
         </ul>

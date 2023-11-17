@@ -19,7 +19,7 @@
             </div>   
             <button class="btn" type="submit">Daftar</button>
             <div class="back">
-                <a href="<?=base_url();?>halaman_utama/index">Back to Home</a>
+                <a href="<?=base_url();?>welcome/index">Back to Home</a>
             </div>
         </form>
     </div>

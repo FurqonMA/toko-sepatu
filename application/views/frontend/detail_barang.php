@@ -40,7 +40,7 @@
                     </tr>
                 </table>
                 <?= anchor('halaman_utama/tambah_keranjang/' .$brg->id_barang, '<div class="btn btn-primary" style="position: relative; left: 0;">Add To Cart</div>') ?>
-                <?= anchor('halaman_utama/index/', '<div class="btn btn-secondary" style="position: relative; left: 0;">Kembali</div>') ?>
+                <?= anchor('welcome/index/', '<div class="btn btn-secondary" style="position: relative; left: 0;">Kembali</div>') ?>
             </div>
            </div>
          </div>

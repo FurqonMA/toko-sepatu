@@ -32,7 +32,7 @@
     </table>
     <div align="right">
         <a href="<?= base_url('halaman_utama/hapus_keranjang')?>"><div class="btn btn-danger btn-sm">Hapus Semua Item</div></a>
-        <a href="<?= base_url('halaman_utama/index')?>"><div class="btn btn-primary btn-sm">Lanjutkan Belanja</div></a>
+        <a href="<?= base_url('welcome/index')?>"><div class="btn btn-primary btn-sm">Lanjutkan Belanja</div></a>
         <a href="<?= base_url('halaman_utama/pembayaran')?>"><div class="btn btn-success btn-sm">Pembayaran</div></a>
         
     </div>

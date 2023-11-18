@@ -78,4 +78,13 @@ class Halaman_utama extends CI_Controller
 		$this->load->view('frontend/pembayaran', $data);
 		$this->load->view('frontend/layout/footer');
 	}
+
+	public function proses_pesanan() {
+	$this->session->set_flashdata('pesan', 'Pesanan Berhasil Dibuat!');
+	$data['title'] = 'AthleticXpress | Pesanan Saya';
+    $this->load->view('frontend/layout/head', $data);
+    $this->load->view('frontend/layout/navbar');
+    $this->load->view('frontend/pesanan_saya');
+    $this->load->view('frontend/layout/footer');
+	}
 }

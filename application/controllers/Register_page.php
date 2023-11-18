@@ -29,7 +29,7 @@ class Register_page extends CI_Controller {
 			// $this->load->view('frontend/layout/footer');
 		}else {
 			$data = array (
-				'id'		=> '',
+				'id_user'		=> '',
 				'nama'		=> $this->input->post('nama'),
 				'username'	=> $this->input->post('username'),
 				'password'	=> $this->input->post('password_1'),

@@ -14,6 +14,7 @@ class Halaman_utama extends CI_Controller
           </div>');
             redirect('Auth/login');
         }
+		$this->load->model('model_transaksi');
     }
 
 	public function tambah_keranjang($id)
@@ -82,9 +83,10 @@ class Halaman_utama extends CI_Controller
 	public function proses_pesanan() {
 	$this->session->set_flashdata('pesan', 'Pesanan Berhasil Dibuat!');
 	$data['title'] = 'AthleticXpress | Pesanan Saya';
+	$data['belum_bayar'] = $this->model_transaksi->belum_bayar();
     $this->load->view('frontend/layout/head', $data);
     $this->load->view('frontend/layout/navbar');
-    $this->load->view('frontend/pesanan_saya');
+    $this->load->view('frontend/pesanan_saya', $data);
     $this->load->view('frontend/layout/footer');
 	}
 }

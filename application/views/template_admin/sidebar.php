@@ -35,6 +35,11 @@
                     <i class="fas fa-fw fa-cogs"></i>
                     <span>Setting</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/dashboard_admin/pesanan_masuk')?>">
+                    <i class="fas fa-fw fa-download"></i>
+                    <span>Pesanan Masuk</span></a>
+            </li>
 
         </ul>
         <!-- End of Sidebar -->

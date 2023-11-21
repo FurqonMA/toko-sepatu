@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Nov 2023 pada 03.27
+-- Waktu pembuatan: 21 Nov 2023 pada 08.46
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -58,80 +58,117 @@ INSERT INTO `tb_barang` (`id_barang`, `nama_barang`, `keterangan`, `olahraga`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_invoice`
+-- Struktur dari tabel `tb_keranjang`
 --
 
-CREATE TABLE `tb_invoice` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(56) NOT NULL,
-  `alamat` varchar(225) NOT NULL,
-  `tgl_pesan` datetime NOT NULL,
-  `batas_bayar` datetime NOT NULL
+CREATE TABLE `tb_keranjang` (
+  `id_keranjang` int(11) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `id` int(11) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `gambar` text DEFAULT NULL,
+  `rowid` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_invoice`
+-- Dumping data untuk tabel `tb_keranjang`
 --
 
-INSERT INTO `tb_invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) VALUES
-(8, 'Muhammad Furqon Maulana', 'Jepara, Jawa Tengah', '2023-10-31 12:10:31', '2023-11-01 12:10:31'),
-(9, 'Darwin Nunez', 'Liverpool', '2023-10-31 13:37:49', '2023-11-01 13:37:49'),
-(10, 'Dominik Szoboszlai', 'Liverpool', '2023-11-02 10:58:55', '2023-11-03 10:58:55'),
-(11, 'Muhammad Furqon Maulana', 'Jepara, Jawa Tengah', '2023-11-02 14:45:56', '2023-11-03 14:45:56'),
-(14, 'Luis Diaz', 'Colombia', '2023-11-06 11:27:18', '2023-11-07 11:27:18'),
-(15, 'Mohamed Salah', 'Mesir', '2023-11-06 11:28:59', '2023-11-07 11:28:59'),
-(16, 'Alisson Becker', 'Liverpool', '2023-11-06 11:33:54', '2023-11-07 11:33:54'),
-(17, 'affan', 'Jepara', '2023-11-06 12:07:42', '2023-11-07 12:07:42'),
-(18, 'Zlatan Ibrahimovic', 'Swedia', '2023-11-15 13:43:32', '2023-11-16 13:43:32'),
-(19, 'Zlatan Ibrahimovic', 'Swedia', '2023-11-15 14:13:56', '2023-11-16 14:13:56'),
-(20, 'Zlatan Ibrahimovic', 'Swedia', '2023-11-16 08:43:00', '2023-11-17 08:43:00');
+INSERT INTO `tb_keranjang` (`id_keranjang`, `id_user`, `id`, `qty`, `price`, `name`, `gambar`, `rowid`) VALUES
+(31, 2, 41, 1, 679000, 'sepatu bola adidas', 'bola_adidas3.png', '3416a75f4cea9109507cacd8e2f2aefc');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pesanan`
+-- Struktur dari tabel `tb_rekening`
 --
 
-CREATE TABLE `tb_pesanan` (
-  `id` int(11) NOT NULL,
-  `id_invoice` int(11) NOT NULL,
-  `id_barang` int(11) NOT NULL,
-  `nama_barang` varchar(100) NOT NULL,
-  `jumlah` int(3) NOT NULL,
-  `harga` int(10) NOT NULL,
-  `pilihan` text NOT NULL
+CREATE TABLE `tb_rekening` (
+  `id_rekening` int(11) NOT NULL,
+  `nama_bank` varchar(100) DEFAULT NULL,
+  `no_rek` varchar(100) DEFAULT NULL,
+  `atas_nama` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_pesanan`
+-- Dumping data untuk tabel `tb_rekening`
 --
 
-INSERT INTO `tb_pesanan` (`id`, `id_invoice`, `id_barang`, `nama_barang`, `jumlah`, `harga`, `pilihan`) VALUES
-(6, 8, 25, 'sepatu futsal ortuseight', 1, 279000, ''),
-(7, 9, 25, 'sepatu futsal ortuseight', 2, 279000, ''),
-(8, 10, 25, 'sepatu futsal ortuseight', 1, 279000, ''),
-(9, 10, 26, 'sepatu futsal ortuseight', 1, 280000, ''),
-(10, 11, 37, 'sepatu bola adidas', 1, 1189000, ''),
-(11, 12, 33, 'sepatu bola adidas', 1, 935000, ''),
-(12, 13, 31, 'sepatu basket adidas', 1, 1599000, ''),
-(13, 14, 35, 'sepatu futsal ortuseight', 1, 449000, ''),
-(14, 15, 35, 'sepatu futsal ortuseight', 1, 449000, ''),
-(15, 16, 34, 'sepatu lari adidas', 1, 725000, ''),
-(16, 17, 31, 'sepatu basket adidas', 1, 1599000, ''),
-(17, 18, 31, 'sepatu basket adidas', 1, 1599000, ''),
-(18, 19, 33, 'sepatu bola adidas', 1, 935000, ''),
-(19, 20, 31, 'sepatu basket adidas', 1, 1599000, '');
+INSERT INTO `tb_rekening` (`id_rekening`, `nama_bank`, `no_rek`, `atas_nama`) VALUES
+(1, 'BRI', '261005-140506-1453', 'Muhammad Furqon Maulana'),
+(2, 'MANDIRI', '140506-261005-1945', 'AthleticXpress');
+
+-- --------------------------------------------------------
 
 --
--- Trigger `tb_pesanan`
+-- Struktur dari tabel `tb_rincian`
 --
-DELIMITER $$
-CREATE TRIGGER `pesanan_penjualan` AFTER INSERT ON `tb_pesanan` FOR EACH ROW BEGIN
-   UPDATE tb_barang SET stok = stok-NEW.jumlah
- WHERE id_barang = NEW.id_barang;
- END
-$$
-DELIMITER ;
+
+CREATE TABLE `tb_rincian` (
+  `no_order` varchar(100) DEFAULT NULL,
+  `id_barang` int(11) DEFAULT NULL,
+  `nama_barang` varchar(100) DEFAULT NULL,
+  `keterangan` varchar(225) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tb_rincian`
+--
+
+INSERT INTO `tb_rincian` (`no_order`, `id_barang`, `nama_barang`, `keterangan`, `qty`) VALUES
+('ORD2023-11-2150692', 41, 'sepatu bola adidas', 'Sepatu Bola Adidas Copa Pure.4 FG GY9082 - Owhite/Sorang/Owhite', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_setting`
+--
+
+CREATE TABLE `tb_setting` (
+  `id` int(11) NOT NULL,
+  `nama_toko` varchar(255) DEFAULT NULL,
+  `lokasi` int(11) DEFAULT NULL,
+  `alamat_toko` text DEFAULT NULL,
+  `no_telpon` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tb_setting`
+--
+
+INSERT INTO `tb_setting` (`id`, `nama_toko`, `lokasi`, `alamat_toko`, `no_telpon`) VALUES
+(1, 'AthleticXpress', 163, 'Jl. Raya Kelet - Bangsri, Kelet, Kec. Keling, Kabupaten Jepara, Jawa Tengah', '08123456789');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_transaksi`
+--
+
+CREATE TABLE `tb_transaksi` (
+  `id_transaksi` int(11) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `no_order` varchar(100) NOT NULL,
+  `tgl_order` date NOT NULL DEFAULT current_timestamp(),
+  `nama_penerima` varchar(100) DEFAULT NULL,
+  `provinsi_penerima` varchar(100) DEFAULT NULL,
+  `kota_penerima` varchar(100) DEFAULT NULL,
+  `alamat` text DEFAULT NULL,
+  `kode_pos` varchar(15) DEFAULT NULL,
+  `no_telp` varchar(100) DEFAULT NULL,
+  `ekspedisi` varchar(100) DEFAULT NULL,
+  `total_pesanan` int(11) DEFAULT NULL,
+  `status_bayar` int(11) DEFAULT NULL,
+  `bukti_bayar` text DEFAULT NULL,
+  `atas_nama` varchar(100) DEFAULT NULL,
+  `nama_bank` varchar(100) DEFAULT NULL,
+  `no_rek` varchar(100) DEFAULT NULL,
+  `status_order` int(11) DEFAULT NULL,
+  `no_resi` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -140,7 +177,7 @@ DELIMITER ;
 --
 
 CREATE TABLE `tb_user` (
-  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -151,11 +188,13 @@ CREATE TABLE `tb_user` (
 -- Dumping data untuk tabel `tb_user`
 --
 
-INSERT INTO `tb_user` (`id`, `nama`, `username`, `password`, `role_id`) VALUES
+INSERT INTO `tb_user` (`id_user`, `nama`, `username`, `password`, `role_id`) VALUES
 (1, 'admin', 'admin', '123', 1),
 (2, 'Zlatan Ibrahimovic', 'Zlatan', 'zlatan123', 2),
 (3, 'Dominik Szoboszlai', 'szoboszlai', 'dominik123', 2),
-(4, 'Muhammad Furqon Maulana', 'furqon', 'furqon123', 2);
+(4, 'Muhammad Furqon Maulana', 'furqon', 'furqon123', 2),
+(5, 'Mohamed Salah', 'mosalah', '123', 2),
+(6, 'Roberto Firmino', 'firmino', '123', 2);
 
 --
 -- Indexes for dumped tables
@@ -168,22 +207,37 @@ ALTER TABLE `tb_barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
--- Indeks untuk tabel `tb_invoice`
+-- Indeks untuk tabel `tb_keranjang`
 --
-ALTER TABLE `tb_invoice`
+ALTER TABLE `tb_keranjang`
+  ADD PRIMARY KEY (`id_keranjang`),
+  ADD UNIQUE KEY `rowid` (`rowid`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id` (`id`);
+
+--
+-- Indeks untuk tabel `tb_rekening`
+--
+ALTER TABLE `tb_rekening`
+  ADD PRIMARY KEY (`id_rekening`);
+
+--
+-- Indeks untuk tabel `tb_setting`
+--
+ALTER TABLE `tb_setting`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pesanan`
+-- Indeks untuk tabel `tb_transaksi`
 --
-ALTER TABLE `tb_pesanan`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `tb_transaksi`
+  ADD PRIMARY KEY (`id_transaksi`);
 
 --
 -- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -196,22 +250,45 @@ ALTER TABLE `tb_barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_invoice`
+-- AUTO_INCREMENT untuk tabel `tb_keranjang`
 --
-ALTER TABLE `tb_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+ALTER TABLE `tb_keranjang`
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pesanan`
+-- AUTO_INCREMENT untuk tabel `tb_rekening`
 --
-ALTER TABLE `tb_pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+ALTER TABLE `tb_rekening`
+  MODIFY `id_rekening` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_setting`
+--
+ALTER TABLE `tb_setting`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_transaksi`
+--
+ALTER TABLE `tb_transaksi`
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `tb_keranjang`
+--
+ALTER TABLE `tb_keranjang`
+  ADD CONSTRAINT `tb_keranjang_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_keranjang_ibfk_2` FOREIGN KEY (`id`) REFERENCES `tb_barang` (`id_barang`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

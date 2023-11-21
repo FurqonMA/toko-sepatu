@@ -30,6 +30,10 @@
         position: absolute;
         bottom: 0;
     }
+    /* Gaya untuk teks tab */
+  .nav-tabs .nav-link {
+    color: #fff; /* Warna teks tab */
+  }
 </style>
 
 

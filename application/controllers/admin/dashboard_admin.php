@@ -59,4 +59,36 @@ class Dashboard_admin extends CI_Controller {
             redirect('admin/dashboard_admin/setting');
         }
     }
+
+    public function pesanan_masuk() {
+        $data['judul'] = 'Pesanan Masuk';
+        $data['pesanan'] = $this->model_pesanan_masuk->pesanan();
+        $data['pesanan_diproses'] = $this->model_pesanan_masuk->pesanan_diproses();        
+        $data['pesanan_dikirim'] = $this->model_pesanan_masuk->pesanan_dikirim();        
+        $this->load->view('template_admin/header', $data);
+        $this->load->view('template_admin/sidebar');
+        $this->load->view('admin/pesanan_masuk', $data);
+        $this->load->view('template_admin/footer');
+    }
+
+    public function proses($id_transaksi) {
+        $data = array(
+            'id_transaksi' => $id_transaksi,
+            'status_order' => '1',
+        );
+        $this->model_pesanan_masuk->update_order($data);
+        $this->session->set_flashdata('pesan','Pesanan Berhasil Diproses/Dikemas!');
+        redirect('admin/dashboard_admin/pesanan_masuk');
+    }
+
+    public function kirim($id_transaksi) {
+        $data = array(
+            'id_transaksi' => $id_transaksi,
+            'no_resi' => $this->input->post('no_resi'),
+            'status_order' => '2',
+        );
+        $this->model_pesanan_masuk->update_order($data);
+        $this->session->set_flashdata('pesan','Pesanan Berhasil Dikirim!');
+        redirect('admin/dashboard_admin/pesanan_masuk');
+    }
 }

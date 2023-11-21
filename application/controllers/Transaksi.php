@@ -9,11 +9,9 @@ class Transaksi extends CI_Controller {
     }
 
     public function tambah_data() {
-        if (!$this->session->userdata('logged_in')) {
+        if (!$this->session->userdata('username')) {
             redirect('auth/login');
-        }
-
-        
+        }else {
         $id_user = $this->session->userdata('id_user');
         $tgl_order = date('Y-m-d');
         $angka_random = mt_rand(1000, 9999);
@@ -43,14 +41,18 @@ class Transaksi extends CI_Controller {
         // masukkan data ke tb_rincian
         $i = 1;
         foreach ($this->cart->contents() as $item) {
+            $barang_info = $this->model_transaksi->get_barang_info($item['id']);
             $data_rinci = array (
                 'no_order' => $no_order,
                 'id_barang' => $item['id'],
+                'nama_barang' => $item['name'],
+                'keterangan' => $barang_info->keterangan,
                 'qty' => $item['qty'],
             );
             $this->model_transaksi->simpan_rincian($data_rinci);
         }
         $this->session->set_flashdata('pesan', 'Pesanan berhasil dibuat!');
         redirect('halaman_utama/proses_pesanan');
+        }
     }
 }

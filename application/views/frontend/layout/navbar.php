@@ -40,12 +40,13 @@
          <!-- <li>
           <a class="sale" style="color: white; background-color: red; width: 60px; height: 63px; margin-bottom: 3px; display: flex; align-items: center; padding-left: 12px; border-radius: 10px;" href="#">Sale</a>
          </li> -->
-         <li>
-          <?php
-          $keranjang = '<span style="color: white;">Keranjang : '. $this->cart->total_items().'</span>';
-          ?>
-          <?= anchor('halaman_utama/detail_keranjang', $keranjang)?>
-         </li>
+         <li id="cart-link">
+              <?php
+              $keranjang = '<span id="keranjang-count" style="color: white;">Keranjang : ' . $this->cart->total_items() . '</span>';
+              ?>
+              <?= anchor('halaman_utama/detail_keranjang', $keranjang) ?>
+          </li>
+
          <li>
           <?php if($this->session->userdata('username')) { ?>
             <li><div style="color: #fff; font-weight: bold;">Welcome <?php echo $this->session->userdata('username')?></div></li>
@@ -69,4 +70,29 @@
     </div>
   </div>
 </nav>
+
+<!-- Tambahkan script ini pada file HTML Anda -->
+<script>
+    function updateCartCount() {
+        $.ajax({
+            url: '<?= base_url("halaman_utama/get_cart_count"); ?>',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                $('#keranjang-count').text('Keranjang : ' + data.cart_count);
+            },
+            error: function () {
+                console.log('Error fetching cart count');
+            }
+        });
+    }
+
+    // Panggil fungsi ini saat dokumen siap
+    $(document).ready(function () {
+        updateCartCount();
+    });
+</script>
+
+
+
 

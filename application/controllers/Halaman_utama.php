@@ -15,6 +15,7 @@ class Halaman_utama extends CI_Controller
             redirect('Auth/login');
         }
 		$this->load->model('model_transaksi');
+		$this->load->model('model_pesanan_masuk');
 		$this->load_cart_items();
     }
 
@@ -138,6 +139,7 @@ public function hapus_item_keranjang($rowid)
         $data['belum_bayar'] = $this->model_transaksi->belum_bayar();
         $data['diproses'] = $this->model_transaksi->diproses();
         $data['dikirim'] = $this->model_transaksi->dikirim();
+        $data['selesai'] = $this->model_transaksi->selesai();
         $this->load->view('frontend/layout/head', $data);
         $this->load->view('frontend/layout/navbar');
         $this->load->view('frontend/pesanan_saya', $data);
@@ -188,7 +190,7 @@ public function hapus_item_keranjang($rowid)
         
                     // Update data transaksi dengan bukti pembayaran
                     $this->model_transaksi->upload_bukti($id_transaksi, $data_transaksi);
-                    $this->session->set_flashdata('bukti', 'Bukti Berhasil Di Upload!');
+                    $this->session->set_flashdata('pesan', 'Bukti Berhasil Di Upload!');
                     redirect('halaman_utama/proses_pesanan');
                 }
                 
@@ -200,6 +202,16 @@ public function hapus_item_keranjang($rowid)
             //     $this->load->view('frontend/layout/navbar');
             //     $this->load->view('frontend/bayar', $data);
             //     $this->load->view('frontend/layout/footer');
+        }
+
+        public function diterima($id_transaksi) {
+            $data = array(
+                'id_transaksi' => $id_transaksi,
+                'status_order' => '3',
+            );
+            $this->model_pesanan_masuk->update_order($data);
+            $this->session->set_flashdata('pesan','Pesanan Telah Diterima!');
+            redirect('halaman_utama/proses_pesanan');
         }
         
 }

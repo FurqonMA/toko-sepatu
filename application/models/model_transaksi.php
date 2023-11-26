@@ -79,6 +79,15 @@ public function hapus_item_keranjang($rowid)
         return $this->db->get()->result();
     }
 
+    public function selesai() {
+        $this->db->select('*');
+        $this->db->from('tb_transaksi');
+        $this->db->where('id_user', $this->session->userdata('id_user'));
+        $this->db->where('status_order=3');
+        $this->db->order_by('id_transaksi', 'desc');
+        return $this->db->get()->result();
+    }
+
     public function detail_pesanan($id_transaksi) {
         $this->db->select('*');
         $this->db->from('tb_transaksi');

@@ -65,6 +65,7 @@ class Dashboard_admin extends CI_Controller {
         $data['pesanan'] = $this->model_pesanan_masuk->pesanan();
         $data['pesanan_diproses'] = $this->model_pesanan_masuk->pesanan_diproses();        
         $data['pesanan_dikirim'] = $this->model_pesanan_masuk->pesanan_dikirim();        
+        $data['pesanan_selesai'] = $this->model_pesanan_masuk->pesanan_selesai();        
         $this->load->view('template_admin/header', $data);
         $this->load->view('template_admin/sidebar');
         $this->load->view('admin/pesanan_masuk', $data);

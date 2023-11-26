@@ -2,11 +2,11 @@
     <div class="row my-4">
         <h1 style="font-family: Poppins; font-weight: 400;  color: #00000070;">Pesanan Saya</h1>
     </div>
-  <?php if ($this->session->flashdata('bukti')): ?>
-      <div class="alert alert-success" role="alert">
-          <?= $this->session->flashdata('bukti'); ?>
-      </div>
-  <?php endif; ?>
+  <?php if ($this->session->flashdata('pesan')): ?>
+  <div class="alert alert-success" role="alert">
+      <?= $this->session->flashdata('pesan'); ?>
+  </div>
+<?php endif; ?>
     <div class="row">
         <div class="col-md-12">
             <div class="card card-primary card-outline card-outline-tabs">
@@ -90,7 +90,6 @@
                         <th>Ekspedisi</th>
                         <th>Total Bayar</th>
                         <th>Nomor Resi</th>
-                        <th>Action</th>
                       </tr>
                       <?php foreach($dikirim as $key => $value) { ?>
                         <tr>
@@ -104,15 +103,43 @@
                           <td>
                             <h5>
                               <?= $value->no_resi ?>
+                              
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#diterima<?= $value->id_transaksi ?>">
+                                Diterima
+                              </button>
                             </h5>
                           </td>
-                          <td><a href="" class="btn btn-flat btn-primary" style="margin-right: 20px;">Diterima</a></td>
                         </tr>
                       <?php } ?>
                      </table>
                   </div>
                   <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
-                     lorem 4
+                    <table class="table table-bordered table-light table-hover table-striped">
+                      <tr>
+                        <th>No Order</th>
+                        <th>Tanggal Order</th>
+                        <th>Ekspedisi</th>
+                        <th>Total Bayar</th>
+                        <th>Nomor Resi</th>
+                      </tr>
+                      <?php foreach($selesai as $key => $value) { ?>
+                        <tr>
+                          <td><?= $value->no_order ?></td>
+                          <td><?= $value->tgl_order ?></td>
+                          <td><?= $value->ekspedisi ?></td>
+                          <td>
+                            <b>Rp. <?=number_format($value->total_pesanan, 0,',','.') ?></b>
+                          </td>
+                          <td>
+                            <h5>
+                              <?= $value->no_resi ?> 
+                                         
+                             <span class="badge bg-success text-white" style="font-size: 16px; padding: 5px; width: auto; margin-left: -2px; margin-top: 8px;">Selesai</span>
+                            </h5>
+                          </td>
+                        </tr>
+                      <?php } ?>
+                     </table>
                   </div>
                 </div>
               </div>
@@ -121,6 +148,28 @@
           </div>
     </div>
 </div>
+
+
+<!-- Modal -->
+<?php foreach($dikirim as $key => $value) { ?>
+<div class="modal fade" id="diterima<?= $value->id_transaksi ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pesanan Diterima</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <p>Apakah Anda Yakin Pesanan Sudah Diterima?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+        <a href="<?= base_url('halaman_utama/diterima/'. $value->id_transaksi) ?>" class="btn btn-primary btn-flat">Ya</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <?php } ?>
 
 <script>
     $(document).ready(function(){

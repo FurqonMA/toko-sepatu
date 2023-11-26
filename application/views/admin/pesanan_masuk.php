@@ -149,7 +149,39 @@
                      </table>
                   </div>
                   <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
-                     lorem 4
+                  <table class="table table-bordered  table-hover ">
+                      <tr>
+                        <th>No Order</th>
+                        <th>Tanggal Order</th>
+                        <th>Ekspedisi</th>
+                        <th>Total Bayar</th>
+                        <th>Keterangan Barang</th>
+                        <th>Nomor Resi</th>
+                      </tr>
+                      <?php foreach($pesanan_selesai as $key => $value) { ?>
+                        <tr>
+                          <td><?= $value->no_order ?></td>
+                          <td><?= $value->tgl_order ?></td>
+                          <td><?= $value->ekspedisi ?></td>
+                          <td>
+                            <b>Rp. <?=number_format($value->total_pesanan, 0,',','.') ?></b>
+                          </td>
+                          <td>
+                            <?php
+                            // Ambil data rincian berdasarkan no_order
+                            $rincian_pesanan = $this->model_transaksi->get_rincian_info($value->no_order);
+                            foreach ($rincian_pesanan as $rincian) {
+                                echo $rincian->keterangan . "<br>";
+                            }
+                            ?>
+                        </td>
+                          <td>
+                            <?= $value->no_resi ?><br>
+                            <span class="badge bg-success text-white" style="font-size: 16px; padding: 5px; width: auto; margin-left: -2px; margin-top: 8px;">Pesanan Telah Diterima</span>
+                          </td>
+                        </tr>
+                      <?php } ?>
+                     </table>
                   </div>
                 </div>
               </div>

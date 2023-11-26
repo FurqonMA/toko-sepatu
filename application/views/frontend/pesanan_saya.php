@@ -7,6 +7,11 @@
       <?= $this->session->flashdata('pesan'); ?>
   </div>
 <?php endif; ?>
+  <?php if ($this->session->flashdata('bukti')): ?>
+  <div class="alert alert-success" role="alert">
+      <?= $this->session->flashdata('bukti'); ?>
+  </div>
+<?php endif; ?>
     <div class="row">
         <div class="col-md-12">
             <div class="card card-primary card-outline card-outline-tabs">

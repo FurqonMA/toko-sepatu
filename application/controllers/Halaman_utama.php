@@ -190,7 +190,7 @@ public function hapus_item_keranjang($rowid)
         
                     // Update data transaksi dengan bukti pembayaran
                     $this->model_transaksi->upload_bukti($id_transaksi, $data_transaksi);
-                    $this->session->set_flashdata('pesan', 'Bukti Berhasil Di Upload!');
+                    $this->session->set_flashdata('bukti', 'Bukti Berhasil Di Upload!');
                     redirect('halaman_utama/proses_pesanan');
                 }
                 

@@ -17,6 +17,9 @@ class Dashboard_admin extends CI_Controller {
         $data['databola'] = $this->db->where('olahraga', 'sepak bola')->count_all_results('tb_barang');
         $data['databasket'] = $this->db->where('olahraga', 'basket')->count_all_results('tb_barang');
         $data['datalari'] = $this->db->where('olahraga', 'lari')->count_all_results('tb_barang');
+        $data['dataselesai'] = $this->db->where('status_order', '3')->count_all_results('tb_transaksi');
+        $data['datamasuk'] = $this->db->where('status_order', '0')->count_all_results('tb_transaksi');
+        $data['datakirim'] = $this->db->where('status_order', '2')->count_all_results('tb_transaksi');
         $data['judul'] = 'Dashboard Admin';
         $this->load->view('template_admin/header', $data);
         $this->load->view('template_admin/sidebar');

@@ -36,6 +36,11 @@
                     <span>Setting</span></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/laporan')?>">
+                    <i class="fas fa-fw fa-file"></i>
+                    <span>Laporan</span></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('admin/dashboard_admin/pesanan_masuk')?>">
                     <i class="fas fa-fw fa-download"></i>
                     <span>Pesanan Masuk</span></a>

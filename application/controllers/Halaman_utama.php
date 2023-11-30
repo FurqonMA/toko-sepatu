@@ -19,30 +19,39 @@ class Halaman_utama extends CI_Controller
 		$this->load_cart_items();
     }
 
-	public function tambah_keranjang($id)
-{
-    if (!$this->session->userdata('id_user')) {
-        redirect('auth/login');
-    } else {
-        $barang = $this->model_barang->find($id);
-        $id_user = $this->session->userdata('id_user');
-        $rowid = md5($id);
-
-        $data = array(
-            'id_user' => $id_user,
-            'id'      => $barang->id_barang,
-            'qty'     => 1,
-            'price'   => $barang->harga,
-            'name'    => $barang->nama_barang,
-            'gambar'  => $barang->gambar,
-            'rowid'   => $rowid,
-        );
-		$this->model_transaksi->insert_keranjang($data);
-        $this->cart->insert($data);
-
-        redirect('welcome');
+    public function tambah_keranjang($id)
+    {
+        if (!$this->session->userdata('id_user')) {
+            redirect('auth/login');
+        } else {
+            $barang = $this->model_barang->find($id);
+            $id_user = $this->session->userdata('id_user');
+    
+            // Cek apakah item sudah ada dalam keranjang
+            $existing_item = $this->model_transaksi->load_cart_item($id_user, $barang->id_barang);
+    
+            if ($existing_item) {
+                // Jika item sudah ada, update hanya jumlahnya
+                $this->model_transaksi->update_keranjang_qty($id_user, $barang->id_barang, $existing_item->qty + 1);
+            } else {
+                // Jika item belum ada, tambahkan item baru ke keranjang
+                $data = array(
+                    'id_user' => $id_user,
+                    'id'      => $barang->id_barang,
+                    'qty'     => 1,
+                    'price'   => $barang->harga,
+                    'name'    => $barang->nama_barang,
+                    'gambar'  => $barang->gambar,
+                );
+                $this->model_transaksi->insert_keranjang($data);
+            }
+    
+            redirect('welcome');
+        }
     }
-}
+    
+
+    
 
 	private function load_cart_items()
 {
@@ -55,7 +64,6 @@ class Halaman_utama extends CI_Controller
         $cart_items = $this->model_transaksi->load_cart_items($id_user);
 
         foreach ($cart_items as $item) {
-            $rowid = md5($item->id);  // Ubah ini sesuai dengan kebutuhan Anda
 
             $data = array(
                 'id_user' => $item->id_user,
@@ -64,10 +72,24 @@ class Halaman_utama extends CI_Controller
                 'price'   => $item->price,
                 'name'    => $item->name,
                 'gambar'  => $item->gambar,
-                'rowid'   => $rowid, // Atur nilai rowid sesuai dengan kebutuhan Anda
             );
             $this->cart->insert($data);
         }
+    }
+}
+
+public function hapus_item_keranjang($id_barang)
+{
+    if (!$this->session->userdata('id_user')) {
+        redirect('auth/login');
+    } else {
+        $id_user = $this->session->userdata('id_user');
+        
+        // Hapus item keranjang berdasarkan id_barang
+        $this->model_transaksi->hapus_item_keranjang($id_user, $id_barang);
+
+        // Refresh halaman keranjang
+        redirect('halaman_utama/detail_keranjang');
     }
 }
 
@@ -105,11 +127,7 @@ public function get_cart_count()
     redirect('welcome');
 }
 
-public function hapus_item_keranjang($rowid)
-{
-    $this->model_transaksi->hapus_item_keranjang($rowid);
-    redirect('halaman_utama/detail_keranjang');
-}
+
 	
 	
 

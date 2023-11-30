@@ -3,25 +3,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class model_transaksi extends CI_Model {
     public function insert_keranjang($data)
-{
-    $this->db->insert('tb_keranjang', $data);
-}
-public function load_cart_items($id_user)
-{
-    return $this->db->where('id_user', $id_user)->get('tb_keranjang')->result();
-}
+    {
+        $this->db->insert('tb_keranjang', $data);
+    }
 
-public function hapus_keranjang($id_user)
+    public function load_cart_items($id_user)
+    {
+        return $this->db->where('id_user', $id_user)->get('tb_keranjang')->result();
+    }
+
+    public function hapus_keranjang($id_user)
+    {
+        $this->db->where('id_user', $id_user);
+        $this->db->delete('tb_keranjang');
+    }
+
+    
+
+    public function update_keranjang_qty($id_user, $id_barang, $qty)
+    {
+        $data = array('qty' => $qty);
+        $this->db->where('id_user', $id_user);
+        $this->db->where('id', $id_barang);
+        $this->db->update('tb_keranjang', $data);
+    }
+
+    public function load_cart_item($id_user, $id_barang)
+    {
+        return $this->db->where('id_user', $id_user)
+                        ->where('id', $id_barang)
+                        ->get('tb_keranjang')
+                        ->row();
+    }
+
+    public function hapus_item_keranjang($id_user, $id_barang)
 {
     $this->db->where('id_user', $id_user);
+    $this->db->where('id', $id_barang);
     $this->db->delete('tb_keranjang');
 }
 
-public function hapus_item_keranjang($rowid)
-{
-    $this->db->where('rowid', $rowid);
-    $this->db->delete('tb_keranjang');
-}
+
+
 
 
 

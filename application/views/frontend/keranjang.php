@@ -21,7 +21,9 @@
                 <td><?=$items['qty'] ?></td>
                 <td align="right">Rp. <?= number_format( $items['price'], 0,',','.')?></td>
                 <td align="right">Rp. <?= number_format( $items['subtotal'], 0,',','.')?></td>
-                <td><?= anchor('halaman_utama/hapus_item_keranjang/' . $items['rowid'], 'Hapus', 'class="btn btn-danger btn-sm"') ?></td>
+                <td>
+                    <a href="<?= base_url('halaman_utama/hapus_item_keranjang/' . $items['id']) ?>" class="btn btn-danger btn-sm">Hapus</a>
+                </td>
 
             </tr>
         <?php endforeach; ?>

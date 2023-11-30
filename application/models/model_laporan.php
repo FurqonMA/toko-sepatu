@@ -12,4 +12,19 @@ class Model_laporan extends CI_Model{
         $this->db->where('YEAR(tb_transaksi.tgl_order)', $tahun);
         return $this->db->get()->result();
     }
+    public function lap_bulanan($bulan, $tahun) {
+        $this->db->select('*');
+        $this->db->from('tb_transaksi');
+        $this->db->where('MONTH(tgl_order)', $bulan);
+        $this->db->where('YEAR(tgl_order)', $tahun);
+        $this->db->where('status_bayar= 1');
+        return $this->db->get()->result();
+    }
+    public function lap_tahunan($tahun) {
+        $this->db->select('*');
+        $this->db->from('tb_transaksi');
+        $this->db->where('YEAR(tgl_order)', $tahun);
+        $this->db->where('status_bayar= 1');
+        return $this->db->get()->result();
+    }
 }

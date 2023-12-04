@@ -161,7 +161,7 @@
   }
 
    nav .navbar .logo img {
-    margin-right: 90px;
+    margin-right: 190px;
    }
 }
 
@@ -169,6 +169,27 @@
     nav .navbar .nav-links {
         max-width: 100%;
     }
+
+    nav .navbar .logo img {
+        margin-right: 80px;
+       }
+
+    .banner {
+        width: 100%;
+        height: 100vh;
+        place-items: center;
+        margin-top: 5px;
+        margin-bottom: 55px;
+    }
+
+    .gambarsection1 img{
+        width: 95%;
+        height: 120px;
+        border-radius: 20px;
+        margin-left: 10px;
+      }
+
+    
 
 }
 

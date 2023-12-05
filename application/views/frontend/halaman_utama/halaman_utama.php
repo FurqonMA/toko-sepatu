@@ -63,8 +63,8 @@
         
         <div class="row">
             <?php foreach ($barang as $brg) : ?>
-            <div class="col-lg-4 mb-4 col-md-6">
-                <div class="card-produk" style="width: 24rem; height: auto; border-radius: 20px;">
+            <div class="col-lg-4 mb-4 col-md-6 col-sm-12 d-flex justify-content-center mt-5">
+                <div class="card-produk" style="width: 22rem; height: auto; border-radius: 20px; margin-left: 10px;">
                         <img src="<?= base_url().'/uploads/'.$brg->gambar ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <div class="container container-detail">                     

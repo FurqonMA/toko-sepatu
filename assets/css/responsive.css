@@ -165,6 +165,26 @@
    }
 }
 
+@media screen and (max-width: 768px) {
+    nav .navbar .logo img {
+        width: 300px;
+    }
+
+    .banner {
+        width: 100%;
+        place-items: center;
+        margin-top: 10px;
+        margin-bottom: 80px;
+    }
+
+    /* .gambarsection1 img{
+        width: 95%;
+        height: 150px;
+        border-radius: 20px;
+        margin-left: 10px;
+      } */
+}
+
 @media screen and (max-width: 480px) {
     nav .navbar .nav-links {
         max-width: 100%;
@@ -172,13 +192,13 @@
 
     nav .navbar .logo img {
         margin-right: 80px;
-       }
+    }
 
     .banner {
         width: 100%;
         height: 100vh;
         place-items: center;
-        margin-top: 5px;
+        margin-top: -5px;
         margin-bottom: 55px;
     }
 
@@ -189,12 +209,83 @@
         margin-left: 10px;
       }
 
+    .shopby .container {
+        width: 90%;
+        height: auto;
+        background-color: #fff;
+        box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+        border-radius: 12px;
+      }
+
+      .card-produk img {
+        width: 70%;
+        position: relative;
+        top: -35px;
+        left: 45px;
+        margin-bottom: 40px;
+        transform: rotate(10deg);
+      }
+
+      .card-produk .card-body h5{
+        font-size: 1.15rem;
+      }
+
+      .card-produk .card-body p {
+        font-size: 14px;
+      }
+
+      .card-body .badge {
+        width: 75%;
+        padding: 10px 20px;
+        font-size: 1.10rem;
+        font-weight: normal;
+        margin-left: 40px;
+        background: #333;
+      
+      }
+
+      .card-body .btn {
+        position: relative;
+        left: 21%;
+        font-size: 1rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
     
 
 }
 
+@media screen and (max-width: 425px) {
+    nav .navbar .logo img {       
+        width: 250px;
+        margin-right: 50px;
+    }
+}
+@media screen and (max-width: 412px) {
+    nav .navbar .logo img {       
+        width: 250px;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    nav .navbar .logo img {       
+        width: 200px;
+        margin-right: 55px;
+    }
+
+    .banner {
+        display: none;
+    }
+}
 @media screen and (max-width: 320px) {
-    nav .navbar .logo img {
+    nav .navbar .logo img {       
+        width: 170px;
+        margin-right: 40px;
+    }
+
+    .banner {
         display: none;
     }
 }

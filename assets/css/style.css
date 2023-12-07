@@ -380,7 +380,7 @@
   height: 500px;
   background-size: 100% 100%;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
   animation: changeImage 15s linear infinite;
   margin-bottom: -70px;
@@ -414,6 +414,47 @@
 
 /* BANNER END */
 
+/* BUTTON WHATSAPP START */
+
+  .btn-whatsapp {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #25D366;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+
+  .section {
+    position: relative;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: .6rem;
+    right: 3rem;
+    font-size: 1rem;
+    background-color: #25D366;
+    color: #fff;
+    padding: .2rem 1rem;
+    border-radius: .5rem;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+  }
+
+  .btn-whatsapp:hover .tooltip {
+    opacity: 1;
+  }
+
+
+/* BUTTON WHATSAPP END */
 
 /* SECTION 1 START*/
 
@@ -552,6 +593,63 @@
 
 
 
+
+/* TESTIMONIALS START */
+.testimonials {
+  padding: 40px 0;
+  background: #f1f1f1;
+  color: #434343;
+  text-align: center;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.border {
+  width: 160px;
+  height: 5px;
+  background: rgba(5, 6, 8, 0.95);
+  margin: 26px auto;
+}
+
+.row-testi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-testi {
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 30px;
+}
+
+.testimonial img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.stars {
+  color: rgb(253, 180, 22);
+  margin-bottom: 20px;
+}
+/* TESTIMONIALS END */
 
 
 

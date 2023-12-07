@@ -25,6 +25,13 @@
     
 }
 
+@media screen and (max-width: 960px) {
+    .col-testi {
+        flex: 100%;
+        max-width: 80%;
+    }
+}
+
 @media screen and (max-width: 838px) {
     nav .navbar .nav-links {
         display: block;
@@ -183,6 +190,13 @@
         border-radius: 20px;
         margin-left: 10px;
       } */
+}
+
+@media screen and (max-width: 600px) {
+    .col-testi {
+        flex: 100%;
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 480px) {

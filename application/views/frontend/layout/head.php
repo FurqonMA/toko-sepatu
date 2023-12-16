@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
+    <link rel="shortcut icon" type="image/png/jpg" href="<?=base_url();?>/assets/img/sepatu.png">
 
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="<?=base_url();?>/assets/bootstrap-5.3.1/css/bootstrap.min.css">

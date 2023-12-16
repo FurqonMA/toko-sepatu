@@ -25,7 +25,7 @@
 
 <section class="shopby">
     <div class="judulsection">       
-        <p style="text-align: center; margin-top: 5em; color: #000; font-weight: 500;">Shop By Brand</p>
+        <h5 style="text-align: center; margin-top: 5em; margin-bottom: 3em; color: #000; font-weight: 500;">Shop By Brand</h5>
     </div>
     <div class="container mb-5">
         <div class="logobrand">
@@ -57,7 +57,7 @@
 
 <!-- KARTU PRODUK START -->
 <div class="judulsection">       
-    <p style="text-align: center; margin-top: 5em; color: #000; font-weight: 500;">Produk-Produk Kami</p>
+    <h5 style="text-align: center; margin-top: 5em; color: #000; font-weight: 500;">Produk-Produk Kami</h5>
 </div>
     <div class="container container-produk mb-4">        
         
@@ -70,9 +70,9 @@
                             <div class="container container-detail">                     
                                 <h5 class="nama_barang"><?= $brg->nama_barang ?></h5>
                                 <p class="keterangan"><?= $brg->keterangan?></p>
-                                <span class="badge text-bg-success">Rp. <?= number_format($brg->harga, 0,',','.')?></span>
+                                <span class="badge" style="background-color: rgb(231, 132, 20);">Rp. <?= number_format($brg->harga, 0,',','.')?></span>
                             </div>
-                            <?= anchor('halaman_utama/tambah_keranjang/' .$brg->id_barang, '<div class="btn btn-primary">Add To Cart</div>') ?>
+                            <?= anchor('halaman_utama/tambah_keranjang/' .$brg->id_barang, '<div class="btn btn-success"><i class="bx bx-cart"></i> Add To Cart</div>') ?>
                             <?= anchor('welcome/detail/' .$brg->id_barang, '<div class="btn btn-danger">Detail</div>') ?>
                         </div>
                   </div>

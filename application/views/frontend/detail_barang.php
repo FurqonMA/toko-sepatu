@@ -39,7 +39,7 @@
                         <td><strong style="background-color: rgb(35, 145, 35); padding: 5px; color: #fff; border-radius: 10px; font-size: 15px;">Rp. <?php echo number_format($brg->harga,0,',','.') ?></strong></td>
                     </tr>
                 </table>
-                <?= anchor('halaman_utama/tambah_keranjang/' .$brg->id_barang, '<div class="btn btn-primary" style="position: relative; left: 0;">Add To Cart</div>') ?>
+                <?= anchor('halaman_utama/tambah_keranjang/' .$brg->id_barang, '<div class="btn btn-primary" style="position: relative; left: 0;"><i class="bx bx-cart"></i> Add To Cart</div>') ?>
                 <?= anchor('welcome/index/', '<div class="btn btn-secondary" style="position: relative; left: 0;">Kembali</div>') ?>
             </div>
            </div>

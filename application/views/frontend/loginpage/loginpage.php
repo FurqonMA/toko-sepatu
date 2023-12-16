@@ -1,4 +1,4 @@
-<section class="loginpage" style="  background: url('../assets/img/background.jpg') no-repeat; background-size: cover; background-position: center;">
+<section class="loginpage" style="  background: url('../assets/img/background1.jpg') no-repeat; background-size: cover; background-position: center;">
     <div class="wrapper">
         <form action="<?php echo base_url('auth/login') ?>" method="POST">
             <h1>LOGIN</h1>

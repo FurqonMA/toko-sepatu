@@ -82,7 +82,7 @@
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 mt-5">
           <h4 class="title-footer">About Us</h4>
-          <p> <span style="font-weight: 700;"> AthleticXpress</span> adalah toko sepatu online yang dirancang khusus untuk memenuhi kebutuhan penggemar olahraga. Kami memiliki koleksi sepatu yang luas, berkualitas tinggi, dan trendi untuk berbagai jenis aktivitas, mulai dari lari, sepak bola, voli, hingga futsal.</p>
+          <p> <span style="font-weight: 700;"> AthleticXpress</span> adalah toko sepatu online yang dirancang khusus untuk memenuhi kebutuhan penggemar olahraga. Kami memiliki koleksi sepatu yang luas, berkualitas tinggi, dan trendi untuk berbagai jenis aktivitas, mulai dari lari, sepak bola, basket, hingga futsal.</p>
           <div class="icons d-flex align-items-center">
             <a href="#"><i class='bx bxl-facebook-square'></i></a>
             <a href="#"><i class='bx bxl-instagram-alt' ></i></a>

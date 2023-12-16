@@ -7,6 +7,10 @@
     scroll-behavior: smooth;
 }
 
+body {
+  background-color: #fbfbfb;
+}
+
 
 
 /* NAVBAR START */
@@ -462,7 +466,7 @@
 .gambarsection1 img{
   width: 98%;
   height: 160px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .gambarsection1 img {
@@ -502,7 +506,7 @@
 }
 
 .card-produk {
-  border: 1px solid rgb(235, 235, 235);
+  border: 2px solid rgb(235, 235, 235);
 }
 
 .card-produk:hover {
@@ -513,7 +517,7 @@
   width: 80%;
   position: relative;
   top: -35px;
-  left: 45px;
+  left: 25px;
   margin-bottom: 40px;
   transform: rotate(10deg);
 }

@@ -12,6 +12,35 @@ class Transaksi extends CI_Controller {
         if (!$this->session->userdata('username')) {
             redirect('auth/login');
         }else {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('nama_penerima','Nama Penerima','required', array(
+            'required' => 'Nama Penerima wajib di isi!'
+        ));
+        $this->form_validation->set_rules('provinsi_penerima','Provinsi Penerima','required', array(
+            'required' => 'Provinsi wajib di isi!'
+        ));
+        $this->form_validation->set_rules('kota_penerima','Kota Penerima','required', array(
+            'required' => 'Kabupaten/Kota wajib di isi!'
+        ));
+        $this->form_validation->set_rules('alamat','Alamat','required', array(
+            'required' => 'Alamat wajib di isi!'
+        ));
+        $this->form_validation->set_rules('kode_pos','Kode Pos','required', array(
+            'required' => 'Kode Pos wajib di isi!'
+        ));
+        $this->form_validation->set_rules('no_telp','No Telp','required', array(
+            'required' => 'Nomor Telepon wajib di isi!'
+        ));
+        $this->form_validation->set_rules('ekspedisi','Ekspedisi','required', array(
+            'required' => 'Ekspedisi wajib di isi!'
+        ));
+        if ($this->form_validation->run() == FALSE) {
+            $data['title'] = 'AthleticXpress | Pembayaran';
+            $this->load->view('frontend/layout/head', $data);
+            $this->load->view('frontend/layout/navbar');
+            $this->load->view('frontend/pembayaran', $data);
+            $this->load->view('frontend/layout/footer');
+        } else{
         $id_user = $this->session->userdata('id_user');
         $tgl_order = date('Y-m-d');
         $angka_random = mt_rand(1000, 9999);
@@ -51,8 +80,15 @@ class Transaksi extends CI_Controller {
             );
             $this->model_transaksi->simpan_rincian($data_rinci);
         }
-        $this->session->set_flashdata('pesan', 'Pesanan berhasil dibuat!');
+        // $this->session->set_flashdata('pesan', 'Pesanan berhasil dibuat!');
+         // Hapus semua item keranjang dari database
+    $this->model_transaksi->hapus_keranjang($this->session->userdata('id_user'));
+
+    // Hapus semua item dari objek keranjang
+    $this->cart->destroy();
         redirect('halaman_utama/proses_pesanan');
         }
     }
+        }
+        
 }

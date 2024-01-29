@@ -38,19 +38,29 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="atas_nama" class="form-label">Atas Nama</label>
-                        <input type="text" class="form-control" id="atas_nama" name="atas_nama" placeholder="Atas Nama..." required>
+                        <input type="text" class="form-control" id="atas_nama" name="atas_nama" placeholder="Atas Nama...">
+                        <?php echo form_error('atas_nama', '<div class="text-danger">', '</div>'); ?>
                     </div>
                     <div class="mb-3">
                         <label for="nama_bank" class="form-label">Nama Bank</label>
-                        <input type="text" class="form-control" id="nama_bank" name="nama_bank" placeholder="Nama Bank..." required>
+                        <input type="text" class="form-control" id="nama_bank" name="nama_bank" placeholder="Nama Bank...">
+                        <?php echo form_error('nama_bank', '<div class="text-danger">', '</div>'); ?>
                     </div>
                     <div class="mb-3">
                         <label for="no_rek" class="form-label">Nomor Rekening</label>
-                        <input type="text" class="form-control" id="no_rek" name="no_rek" placeholder="Nomor Rekening..." required>
+                        <input type="text" class="form-control" id="no_rek" name="no_rek" placeholder="Nomor Rekening...">
+                        <?php echo form_error('no_rek', '<div class="text-danger">', '</div>'); ?>
                     </div>
                     <div class="mb-3">
                         <label for="bukti_bayar" class="form-label">Bukti Bayar</label>
-                        <input type="file" class="form-control" name="bukti_bayar" required>
+                        <input type="file" class="form-control" name="bukti_bayar">
+                    
+                    <?php if(validation_errors() || isset($upload_error)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo validation_errors(); ?>
+                        <?php echo isset($upload_error) ? $upload_error : ''; ?>
+                    </div>
+                <?php endif; ?>
                     </div>
                 </div>
                 <!-- /.card-body -->

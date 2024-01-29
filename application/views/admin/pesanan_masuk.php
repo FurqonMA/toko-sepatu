@@ -39,6 +39,7 @@
                         <th>No Order</th>
                         <th>Tanggal Order</th>
                         <th>Ekspedisi</th>
+                        <th>Alamat</th>
                         <th>Total Bayar</th>
                         <th>Keterangan Barang</th>
                         <th></th>
@@ -48,6 +49,7 @@
                           <td><?= $value->no_order ?></td>
                           <td><?= $value->tgl_order ?></td>
                           <td><?= $value->ekspedisi ?></td>
+                          <td><?= $value->alamat ?></td>
                           <td>
                             <b>Rp. <?=number_format($value->total_pesanan, 0,',','.') ?></b><br>
                            <?php if($value->status_bayar==0) { ?>
@@ -82,6 +84,7 @@
                         <th>No Order</th>
                         <th>Tanggal Order</th>
                         <th>Ekspedisi</th>
+                        <th>Alamat</th>
                         <th>Total Bayar</th>
                         <th>Keterangan Barang</th>
                         <th></th>
@@ -91,6 +94,7 @@
                           <td><?= $value->no_order ?></td>
                           <td><?= $value->tgl_order ?></td>
                           <td><?= $value->ekspedisi ?></td>
+                          <td><?= $value->alamat ?></td>
                           <td>
                             <b>Rp. <?=number_format($value->total_pesanan, 0,',','.') ?></b><br>
                             <span class="badge bg-primary text-white" style="font-size: 16px; padding: 5px; width: auto; margin-left: -2px; margin-top: 8px;">Diproses/Dikemas</span>
@@ -119,8 +123,10 @@
                         <th>No Order</th>
                         <th>Tanggal Order</th>
                         <th>Ekspedisi</th>
+                        <th>Alamat</th>
                         <th>Total Bayar</th>
                         <th>Keterangan Barang</th>
+
                         <th>Nomor Resi</th>
                       </tr>
                       <?php foreach($pesanan_dikirim as $key => $value) { ?>
@@ -128,6 +134,7 @@
                           <td><?= $value->no_order ?></td>
                           <td><?= $value->tgl_order ?></td>
                           <td><?= $value->ekspedisi ?></td>
+                          <td><?= $value->alamat ?></td>
                           <td>
                             <b>Rp. <?=number_format($value->total_pesanan, 0,',','.') ?></b><br>
                             <span class="badge bg-success text-white" style="font-size: 16px; padding: 5px; width: auto; margin-left: -2px; margin-top: 8px;">Dikirim</span>
@@ -154,6 +161,7 @@
                         <th>No Order</th>
                         <th>Tanggal Order</th>
                         <th>Ekspedisi</th>
+                        <th>Alamat</th>
                         <th>Total Bayar</th>
                         <th>Keterangan Barang</th>
                         <th>Nomor Resi</th>
@@ -163,6 +171,7 @@
                           <td><?= $value->no_order ?></td>
                           <td><?= $value->tgl_order ?></td>
                           <td><?= $value->ekspedisi ?></td>
+                          <td><?= $value->alamat ?></td>
                           <td>
                             <b>Rp. <?=number_format($value->total_pesanan, 0,',','.') ?></b>
                           </td>
@@ -219,6 +228,11 @@
                 <th>Atas Nama</th>
                 <th>:</th>
                 <td><?= $value->atas_nama ?></td>
+            </tr>
+            <tr>
+                <th>Alamat</th>
+                <th>:</th>
+                <td><?= $value->alamat ?></td>
             </tr>
             <tr>
                 <th>Total Bayar</th>

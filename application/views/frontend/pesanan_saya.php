@@ -2,11 +2,11 @@
     <div class="row my-4">
         <h1 style="font-family: Poppins; font-weight: 400;  color: #00000070;">Pesanan Saya</h1>
     </div>
-  <?php if ($this->session->flashdata('pesan')): ?>
+  <!-- <?php if ($this->session->flashdata('pesan')): ?>
   <div class="alert alert-success" role="alert">
       <?= $this->session->flashdata('pesan'); ?>
   </div>
-<?php endif; ?>
+<?php endif; ?> -->
   <?php if ($this->session->flashdata('bukti')): ?>
   <div class="alert alert-success" role="alert">
       <?= $this->session->flashdata('bukti'); ?>

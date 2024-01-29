@@ -166,7 +166,17 @@ public function get_cart_count()
 
         public function bayar($id_transaksi) {
 
-            $this->form_validation->set_rules('atas_nama', 'Atas Nama', 'required');
+            
+        $this->form_validation->set_rules('atas_nama','Atas Nama','required', array(
+            'required' => 'Atas Nama wajib di isi!'
+        ));
+        $this->form_validation->set_rules('nama_bank','Nama Bank','required', array(
+            'required' => 'Nama Bank wajib di isi!'
+        ));
+        $this->form_validation->set_rules('no_rek','Nomor Rekening','required', array(
+            'required' => 'Nomor Rekening Bank wajib di isi!'
+        ));
+        $this->form_validation->set_rules('bukti_bayar', 'Bukti Bayar', 'callback_validate_bukti_bayar');
         
             if ($this->form_validation->run() == FALSE) {
                 // Validasi gagal, tampilkan halaman dengan pesan error
@@ -213,6 +223,7 @@ public function get_cart_count()
                 }
                 
             }
+            
             // $data['title'] = 'AthleticXpress | Pembayaran';
             //     $data['pesanan'] = $this->model_transaksi->detail_pesanan($id_transaksi);
             //     $data['rekening'] = $this->model_transaksi->rekening();
@@ -220,6 +231,21 @@ public function get_cart_count()
             //     $this->load->view('frontend/layout/navbar');
             //     $this->load->view('frontend/bayar', $data);
             //     $this->load->view('frontend/layout/footer');
+        }
+        public function validate_bukti_bayar() {
+            $config['upload_path'] = './assets/bukti_bayar/';
+            $config['allowed_types'] = 'gif|jpg|jpeg|png';
+            $config['max_size'] = '2048';
+            $this->load->library('upload', $config);
+        
+            if (!$this->upload->do_upload('bukti_bayar')) {
+                // File upload failed, set validation error
+                $this->form_validation->set_message('validate_bukti_bayar', $this->upload->display_errors());
+                return FALSE;
+            } else {
+                // File upload successful
+                return TRUE;
+            }
         }
 
         public function diterima($id_transaksi) {

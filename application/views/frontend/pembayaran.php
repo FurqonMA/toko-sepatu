@@ -49,12 +49,14 @@
                         <label>Provinsi</label>
                         <select name="provinsi_penerima" class="form-control"></select>
                     </div>
+                    <?php echo form_error('provinsi_penerima', '<div class="text-danger">', '</div>'); ?>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label>Kabupaten / Kota</label>
                         <select name="kota_penerima" class="form-control"></select>
                     </div>
+                    <?php echo form_error('kota_penerima', '<div class="text-danger">', '</div>'); ?>
                 </div>
             </div>
             <div class="row mt-4">
@@ -71,6 +73,7 @@
                             ?>
                         </select>
                     </div>
+                    <?php echo form_error('ekspedisi', '<div class="text-danger">', '</div>'); ?>
                 </div>
                 <!-- <div class="col-sm-6">
                     <div class="form-group">
@@ -84,22 +87,26 @@
                     <div class="form-group mt-3">
                         <label>Alamat Lengkap</label>
                         <input type="text" name="alamat" placeholder="Alamat Lengkap Anda" class="form-control">
+                        <?php echo form_error('alamat', '<div class="text-danger">', '</div>'); ?>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group mt-3">
                         <label>Kode POS</label>
                         <input type="text" name="kode_pos" placeholder="Kode POS Anda" class="form-control">
+                        <?php echo form_error('kode_pos', '<div class="text-danger">', '</div>'); ?>
                     </div>
                 </div>
             </div>
                 <div class="form-group mt-3">
                     <label>No. Telepon</label>
                     <input type="text" name="no_telp" placeholder="Nomor Telepon Anda" class="form-control">
+                    <?php echo form_error('no_telp', '<div class="text-danger">', '</div>'); ?>
                 </div>
                 <div class="form-group mt-3">
                     <label>Nama Penerima</label>
                     <input type="text" name="nama_penerima" placeholder="Nama Lengkap Anda" class="form-control">
+                    <?php echo form_error('nama_penerima', '<div class="text-danger">', '</div>'); ?>
                 </div>
                 <div>
                 <!-- <div class="row mt-4">

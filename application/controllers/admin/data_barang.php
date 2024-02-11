@@ -97,8 +97,14 @@ class Data_barang extends CI_Controller {
     }
 
     public function hapus($id) {
-        $where = array('id_barang'=> $id);
-        $this->model_barang->hapus_data($where, 'tb_barang');
+    $where = array('id_barang'=> $id);
+    // Hapus terlebih dahulu record terkait dari tb_keranjang
+    $this->model_transaksi->hapus_item_keranjang_by_barang($id);
+
+
+    // Kemudian, hapus record dari tb_barang
+    $this->model_barang->hapus_data($where, 'tb_barang');
+        
         redirect('admin/data_barang/index');
     }
 

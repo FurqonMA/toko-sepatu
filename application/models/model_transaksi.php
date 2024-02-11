@@ -18,6 +18,12 @@ class model_transaksi extends CI_Model {
         $this->db->delete('tb_keranjang');
     }
 
+    public function hapus_item_keranjang_by_barang($id_barang) {
+    $this->db->where('id', $id_barang);
+    $this->db->delete('tb_keranjang');
+}
+
+
     
 
     public function update_keranjang_qty($id_user, $id_barang, $qty)

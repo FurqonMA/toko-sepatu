@@ -93,8 +93,8 @@
                 <div class="col-sm-4">
                     <div class="form-group mt-3">
                         <label>Kode POS</label>
-                        <input type="text" name="kode_pos" placeholder="Kode POS Anda" class="form-control">
-                        <?php echo form_error('kode_pos', '<div class="text-danger">', '</div>'); ?>
+                        <input type="text" name="kode_pos" placeholder="Kode POS Anda" class="form-control" required>
+                        <!-- <?php echo form_error('kode_pos', '<div class="text-danger">', '</div>'); ?> -->
                     </div>
                 </div>
             </div>

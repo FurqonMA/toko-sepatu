@@ -269,7 +269,7 @@
             <td><?= $value->nama_penerima ?></td>
           </tr>
           <tr>
-            <th>Alamat Penerima</th>
+            <th>Alamat Lengkap Penerima</th>
             <th>:</th>
             <td><?= $value->alamat ?></td>
           </tr>

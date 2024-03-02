@@ -10,7 +10,7 @@
       <div class="border"></div>
       <div class="row row-testi">
         <div class="col-lg-4 col-testi">
-          <div class="testimonial">
+          <div class="testimonial"  >
              <img src="<?=base_url();?>/assets/img/dominik.jpeg" alt="">
              <div class="name">Dominik Szoboszlai</div>
              <div class="stars">
@@ -20,11 +20,11 @@
               <i class='bx bxs-star'></i>
               <i class='bx bxs-star'></i>
              </div>
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates fugit, expedita voluptatum minima soluta minus aliquid. Voluptatibus, magni ducimus totam nam unde enim iure alias iusto ipsum omnis hic eaque.</p>
+             <p>"I am very satisfied with my purchase at AthleticXpress! Their selection of athletic shoes is very comprehensive, the purchasing process is easy, and the delivery is fast. I will definitely recommend it to my friends."</p>
           </div>
         </div>
         <div class="col-lg-4 col-testi">
-          <div class="testimonial">
+          <div class="testimonial"  style="height: 100%;">
              <img src="<?=base_url();?>/assets/img/jordan.jpg" alt="">
              <div class="name">Michael Jordan</div>
              <div class="stars">
@@ -34,7 +34,7 @@
               <i class='bx bxs-star'></i>
               <i class='bx bxs-star'></i>
              </div>
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates fugit, expedita voluptatum minima soluta minus aliquid. Voluptatibus, magni ducimus totam nam unde enim iure alias iusto ipsum omnis hic eaque.</p>
+             <p>"AthleticXpress is the right place to look for quality athletic shoes. I am happy with their friendly and responsive service. I have become their loyal customer!"</p>
           </div>
         </div>
         <div class="col-lg-4 col-testi">
@@ -48,7 +48,7 @@
               <i class='bx bxs-star'></i>
               <i class='bx bxs-star'></i>
              </div>
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates fugit, expedita voluptatum minima soluta minus aliquid. Voluptatibus, magni ducimus totam nam unde enim iure alias iusto ipsum omnis hic eaque.</p>
+             <p>"First time trying to buy shoes online at AthleticXpress and I am very impressed! The items are as described, delivery is on time, and the customer service is very helpful. Thank you AthleticXpress!"</p>
           </div>
         </div>
       </div>

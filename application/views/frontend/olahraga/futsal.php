@@ -70,10 +70,10 @@
                             <div class="container container-detail">                     
                                 <h5 class="nama_barang"><?= $brg->nama_barang ?></h5>
                                 <p class="keterangan"><?= $brg->keterangan?></p>
-                                <span class="badge text-bg-success">Rp. <?= number_format($brg->harga, 0,',','.')?></span>
+                                <span class="badge" style="background-color: rgb(231, 132, 20);">Rp. <?= number_format($brg->harga, 0,',','.')?></span>
                             </div>
-                            <?= anchor('halaman_utama/tambah_keranjang/' .$brg->id_barang, '<div class="btn btn-primary">Add To Cart</div>') ?>
-                            <?= anchor('halaman_utama/detail/' .$brg->id_barang, '<div class="btn btn-danger">Detail</div>') ?>
+                            <?= anchor('halaman_utama/tambah_keranjang/' .$brg->id_barang, '<div class="btn btn-success"><i class="bx bx-cart"></i> Add To Cart</div>') ?>
+                            <?= anchor('welcome/detail/' .$brg->id_barang, '<div class="btn btn-danger">Detail</div>') ?>
                         </div>
                   </div>
             </div>

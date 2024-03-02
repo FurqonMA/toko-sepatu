@@ -18,6 +18,17 @@ class Halaman_utama extends CI_Controller
 		$this->load->model('model_pesanan_masuk');
 		$this->load_cart_items();
     }
+    
+
+    public function detail($id_barang)
+	 {
+		 $data['barang'] = $this->model_barang->detail_barang($id_barang);
+		 $data['title'] = 'AthleticXpress | Detail Produk';
+		 $this->load->view('frontend/layout/head', $data);
+		 $this->load->view('frontend/layout/navbar');
+		 $this->load->view('frontend/detail_barang', $data);
+		 $this->load->view('frontend/layout/footer');
+	 } 
 
     public function tambah_keranjang($id)
     {
